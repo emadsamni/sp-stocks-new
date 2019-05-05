@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+
+   >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <EditText
+            android:id="@+id/button_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:hint="@string/inputQuantity"
+            android:background="@drawable/edittext_drawable"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+           >
+            <Spinner
+
+                android:id="@+id/fromspid"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_back"
+
+               >
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/fromCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+      >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <Spinner
+                android:id="@+id/tospid"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_back"
+                >
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/toCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:padding="5dp">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="@string/Sell"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textSize="10pt"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="@string/Buy"
+            android:textSize="10pt"
+            android:textAlignment="center"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/sellRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="0"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/BuyRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="0"
+            android:textAlignment="center"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+<ImageView
+    android:id="@+id/convert_button"
+    android:layout_marginTop="20dp"
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/img_click_drawable"
+    android:src="@drawable/converter"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Convert"
+            android:textSize="8pt"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

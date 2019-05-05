@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"SP Stocks"</string>
+    <string name="title_coin">أسعار العملات </string>
+    <string name="title_gold">أسعار الذهب  </string>
+    <string name="title_tranfer">تحويل عملة </string>
+    <string name="title_notifications">إشعارات</string>
+    <string name="internet_error" >الرجاء التحقق من الانترنت و المحاولة مجددا</string>
+    <string name="unexpected_api_error" >خطا غير متوقع، الرجاء المحاولة مجدداً </string>
+    <string name="Sell">شراء</string>
+    <string name="Buy">بيع</string>
+    <string name="from">من</string>
+    <string name="to">إلى</string>
+    <string name="fb_login_protocol_scheme">fb2199453887038296</string>
+    <string name="ReConnect">إعادة الاتصال مجددا</string>
+    <string name="inputEmpty">الرجاء تعبئة جميع الحقول</string>
+    <string name="inputQuantity">كمية العملة</string>
+
+
+
+</resources>

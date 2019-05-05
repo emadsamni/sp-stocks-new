@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">"SP Stocks"</string>
+    <string name="title_coin">Coins</string>
+    <string name="title_gold">Gold </string>
+    <string name="title_tranfer">Coins Transfer </string>
+    <string name="title_notifications">Notifications</string>
+    <string name="internet_error">Please Check Your Internet and Try Again</string>
+    <string name="unexpected_api_error">Unexpected error, please try again later.</string>
+    <string name="Sell">Sell</string>
+    <string name="Buy">Buy</string>
+    <string name="from">from</string>
+    <string name="to">To</string>
+    <string name="facebook_app_id">2199453887038296</string>
+    <string name="fb_login_protocol_scheme">fb2199453887038296</string>
+    <string name="ReConnect">Reconnect</string>
+    <string name="inputEmpty">Please Input all fields</string>
+    <string name="inputQuantity">Coin Quantity</string>
+    <string name="Convert">Convert</string>
+    <string name="title_activity_adds">AddsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-9346728385477859/5538901717</string>
+    <string name="banner_ad_unit_id">ca-app-pub-9346728385477859/4574617487</string>
+
+</resources>
