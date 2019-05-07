@@ -101,8 +101,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
         getData();
-        setNotification();
-        setDolarNotification();
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest2 = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest2);
@@ -198,52 +196,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
-    public  void setNotification()
-    {
-                Calendar firingCal = Calendar.getInstance() ;
-                Calendar calendar = Calendar.getInstance();
-                firingCal.set(Calendar.HOUR_OF_DAY, 9);
-                firingCal.set(Calendar.MINUTE, 1);
-                firingCal.set(Calendar.SECOND, 1);
-                long intendedTime= firingCal.getTimeInMillis();
-                long currentTime= calendar.getTimeInMillis();
-                Intent intent = new Intent(getApplicationContext(), Notification_reciver.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-                if (intendedTime >= currentTime) {
-                    alarmManager.setRepeating(AlarmManager.RTC,
-                            intendedTime,
-                            AlarmManager.INTERVAL_DAY,
-                            pendingIntent);
 
-                }
-                else
-                {
-                    firingCal.add(Calendar.DAY_OF_MONTH, 1);
-                    intendedTime = firingCal.getTimeInMillis();
-                    alarmManager.setRepeating(AlarmManager.RTC,
-                            intendedTime,
-                            AlarmManager.INTERVAL_DAY,
-                            pendingIntent);
-                }
-    }
 
-    public  void setDolarNotification()
-    {
 
-        Calendar firingCal = Calendar.getInstance() ;
-        Calendar calendar = Calendar.getInstance();
-        long intendedTime= firingCal.getTimeInMillis();
-        long currentTime= calendar.getTimeInMillis();
-        calendar.add(Calendar.HOUR_OF_DAY,8);
-        Intent intent2 = new Intent(getApplicationContext(), DolarNotificationReciver.class);
-        PendingIntent pendingIntent2 = PendingIntent.getBroadcast(getApplicationContext(), 100, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager2 = (AlarmManager) getSystemService(ALARM_SERVICE);
-            alarmManager2.setRepeating(AlarmManager.RTC,
-                    calendar.getTimeInMillis(),
-                    1000*60*60*8,
-                    pendingIntent2);
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
