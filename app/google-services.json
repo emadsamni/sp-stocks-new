@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "328246659245",
-    "firebase_url": "https://sp-stocks-7aa4a.firebaseio.com",
-    "project_id": "sp-stocks-7aa4a",
-    "storage_bucket": "sp-stocks-7aa4a.appspot.com"
+    "project_number": "462755386748",
+    "firebase_url": "https://sp-stocks-6a1d8.firebaseio.com",
+    "project_id": "sp-stocks-6a1d8",
+    "storage_bucket": "sp-stocks-6a1d8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:328246659245:android:ab3719fc8efd1fed",
+        "mobilesdk_app_id": "1:462755386748:android:ab3719fc8efd1fed",
         "android_client_info": {
           "package_name": "com.mg.spstocks"
         }
       },
       "oauth_client": [
         {
-          "client_id": "328246659245-9t3rh380ldtjm5gjgmpf2s7muipol5dl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mg.spstocks",
-            "certificate_hash": "88cb08e0533d49b6a7987684788cbbf6d75e97fc"
-          }
-        },
-        {
-          "client_id": "328246659245-mcsr34n536bj4etmga03bg0blg905n1g.apps.googleusercontent.com",
+          "client_id": "462755386748-ks7pil07rbbs8flpovq7t1hoadpt946n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCw9CzGai-wBQaaYZjLoUjFNZcy9F7Hj_g"
+          "current_key": "AIzaSyCyUMM__YSxdmg_ARmdIAT5zWokUsqK_pw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "328246659245-mcsr34n536bj4etmga03bg0blg905n1g.apps.googleusercontent.com",
+              "client_id": "462755386748-ks7pil07rbbs8flpovq7t1hoadpt946n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
