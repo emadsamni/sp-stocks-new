@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <item
+    android:id="@+id/navigation_gold"
+    android:icon="@drawable/gold_icon"
+    android:title="@string/title_gold" />
     <item
         android:id="@+id/navigation_coins"
         android:icon="@drawable/coins_icon"
         android:title="@string/title_coin"
         />
-    <item
-    android:id="@+id/navigation_gold"
-    android:icon="@drawable/gold_icon"
-    android:title="@string/title_gold" />
     <item
         android:id="@+id/navigation_tranfer"
         android:iconTint="@color/colorPrimaryDark"

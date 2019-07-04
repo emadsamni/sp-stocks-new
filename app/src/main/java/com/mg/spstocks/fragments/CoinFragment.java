@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.mg.spstocks.MainActivity;
 import com.mg.spstocks.R;
 import com.mg.spstocks.adapters.Coinadapter;
@@ -25,6 +27,7 @@ public class CoinFragment extends Fragment {
     List<Coin> coinList;
     private RecyclerView myRecyclerView;
     private Coinadapter mAdapter;
+    private InterstitialAd interstitial;
 
     public CoinFragment() {
     }
@@ -42,8 +45,29 @@ public class CoinFragment extends Fragment {
         LinearLayoutManager layoutManager =new LinearLayoutManager( getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         myRecyclerView.setLayoutManager(layoutManager);
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(getActivity());
+        // Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+
+        interstitial.loadAd(adRequest);
+        // Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                // Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
 
         return view;
 
+    }
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
     }
 }

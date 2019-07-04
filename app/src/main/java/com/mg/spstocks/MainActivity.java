@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import  com.facebook.ads.*;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private TextView mTextMessage;
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     Button reConnect;
     InterstitialAd mInterstitialAd;
     private InterstitialAd interstitial;
+    private com.facebook.ads.AdView adView;
+
 
 
     @Override
@@ -85,31 +89,29 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         mPrefs = getSharedPreferences("myPrefs",MODE_PRIVATE);
         progressDialog.show(this);
 
-        AdRequest adRequest = new AdRequest.Builder().build();
 
-        // Prepare the Interstitial Ad
-        interstitial = new InterstitialAd(MainActivity.this);
-       // Insert the Ad Unit ID
-        interstitial.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-
-        interstitial.loadAd(adRequest);
-        // Prepare an Interstitial Ad Listener
-        interstitial.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-           // Call displayInterstitial() function
-                displayInterstitial();
-            }
-        });
         getData();
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest2 = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest2);
+        //loadFBAds();
 
 
 
 
 
     }
+
+   /* private void loadFBAds() {
+        LinearLayout linearLayout =findViewById(R.id.banner_container);
+        adView=  new com.facebook.ads.AdView(this ,"2199453887038296_2290005201316497\n",AdSize.BANNER_HEIGHT_50);
+        linearLayout.addView(adView);
+        adView.loadAd();
+
+
+
+    }*/
+
     public void getData() {
         Api apiService = ApiClient.getClient().create(Api.class);
         Call<ApiResponse<List<Coin>>> call = apiService.getCoins(Constants.API_KEY);
@@ -164,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                        if (reConnectDialog.isShowing())
                            reConnectDialog.cancel();
                    progressDialog.cancel();
-                   CoinFragment fragment = new CoinFragment();
+                   GoldFragment fragment = new GoldFragment();
                    loadFragment(fragment);
                }
                else
@@ -235,7 +237,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }.getType();
             goldList = gson.fromJson(json, type);
             progressDialog.cancel();
-            CoinFragment fragment = new CoinFragment();
+            GoldFragment fragment = new GoldFragment();
             loadFragment(fragment);
         }
         else
