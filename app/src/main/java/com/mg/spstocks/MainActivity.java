@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         FirebaseMessaging.getInstance().subscribeToTopic("all");
         setContentView(R.layout.activity_main);
+        AudienceNetworkAds.initialize(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         progressDialog =ProgressDialog.getInstance();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -88,13 +89,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         goldList=new ArrayList<gold>();
         mPrefs = getSharedPreferences("myPrefs",MODE_PRIVATE);
         progressDialog.show(this);
-
-
         getData();
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest2 = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest2);
-        //loadFBAds();
+        loadFBAds();
 
 
 
@@ -102,6 +101,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
+    private void loadFBAds() {
+        adView = new com.facebook.ads.AdView(this, "2199453887038296_2290005201316497", AdSize.BANNER_HEIGHT_50);
+
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        AdSettings.addTestDevice("f0690d8b-7a9b-4e15-b753-a08b58b1d0a0");
+        adView.loadAd();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
    /* private void loadFBAds() {
         LinearLayout linearLayout =findViewById(R.id.banner_container);
         adView=  new com.facebook.ads.AdView(this ,"2199453887038296_2290005201316497\n",AdSize.BANNER_HEIGHT_50);
@@ -189,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
     private  boolean loadFragment(Fragment fragment)
     {
+
         if (fragment  != null )
         {
             getSupportFragmentManager()
